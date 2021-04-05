@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* p{
+            color: blue;
+            background-color: aqua;
+            font-size: 24px;
+            border: 1px solid black;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        } */
+    </style>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet 
+        consectetur adipisicing elit. Veritatis, temporibus.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium ipsum eos illo quidem molestias ab voluptatibus assumenda hic. Qui perspiciatis odit saepe accusantium
+         aperiam expedita sequi consequatur reiciendis itaque sit.</p>
+    <p>Lorem ipsum dolor sit amet 
+        consectetur adipisicing elit. Aliquam, delectus?</p>
+    <p>Lorem ipsum, dolor sit amet 
+        consectetur adipisicing elit. Voluptas, similique.</p>
+
+
+
+     <script>
+       let paras= document.querySelectorAll("p");
+        paras.forEach(elem=>{
+            elem.style.cssText= "color: blue;background-color: aqua; font-size: 24px; border: 1px solid black;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+    });
+
+    // paras[2].style.cssText= "color: blue;background-color: aqua; font-size: 24px; border: 1px solid black;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+
+    for(let i=0;i<paras.length;i++){
+        if(i%2==0){
+           paras[i].style.backgroundColor="red";
+           
+        }else{
+            // green color
+            paras[i].style.color="green";
+            paras[i].style.cssText="color: blue;background-color: aqua; font-size: 24px; border: 1px solid black;font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"
+            paras[i].style.color="red";
+        }
+    }
+
+
+
+       
+     </script>
+</body>
+</html>

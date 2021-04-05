@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const users = [
+  {
+    _id: 'ab12ex',
+    username: 'Alex',
+    email: 'alex@alex.com',
+    password: '123123',
+    createdAt: '17/05/2019 9:00 AM',
+    isLoggedIn: false
+  },
+  {
+    _id: 'fg12cy',
+    username: 'Asab',
+    email: 'asab@asab.com',
+    password: '123456',
+    createdAt: '17/05/2019 9:30 AM',
+    isLoggedIn: true
+  },
+  {
+    _id: 'zwf8md',
+    username: 'Brook',
+    email: 'brook@brook.com',
+    password: '123111',
+    createdAt: '17/05/2019 9:45 AM',
+    isLoggedIn: true
+  },
+  {
+    _id: 'eefamr',
+    username: 'Martha',
+    email: 'martha@martha.com',
+    password: '123222',
+    createdAt: '17/05/2019 9:50 AM',
+    isLoggedIn: false
+  },
+  {
+    _id: 'ghderc',
+    username: 'Thomas',
+    email: 'thomas@thomas.com',
+    password: '123333',
+    createdAt: '17/05/2019 10:00 AM',
+    isLoggedIn: false
+  }
+];
+
+const products = [
+  {
+    _id: 'eedfcf',
+    name: 'mobile phone',
+    description: 'Huawei Honor',
+    price: 200,
+    ratings: [{ userId: 'fg12cy', rate: 2 }, { userId: 'zwf8md', rate: 4.5 },{userId:'Afaf',rate:2}],
+    likes: []
+  },
+  {
+    _id: 'aegfal',
+    name: 'Laptop',
+    description: 'MacPro: System Darwin',
+    price: 2500,
+    ratings: [],
+    likes: ['fg12cy']
+  },
+  {
+    _id: 'hedfcg',
+    name: 'TV',
+    description: 'Smart TV:Procaster',
+    price: 400,
+    ratings: [{ userId: 'fg12cy', rate: 5 }],
+    likes: ['fg12cy']
+  }
+];
+
+function rateProduct(productId, userId, ratingPoint){
+    let found=false;
+    for(leti+0;i<products.length;i++){
+        if(products[i]._id===productId){
+            for(let j=0;j<products[i].ratings.length;j++){
+                if(products[i].ratings[j].userId===userId){
+                    const rate={userId: userId, rate: ratingPoint};
+                    products[i].ratings[j].rate=ratingPoint;
+                    found=true;
+                    break;
+                }
+                if(!found){
+                    products[i].ratings.push({userId:userId,rate:ratingPoint});
+                }
+            }
+        }else{
+            console.log("Product not found");
+        }
+    }
+}
+
+
+console.log(products);
+rateProduct('eedfcf', 'fg12cy', 5);
+rateProduct('aegfal', 'fg12cy', 2.5);
+rateProduct('aegfal', 'eefamr', 2.0);
+console.log("Apres l'ajout");
+console.log(products);
+    </script>
+</body>
+</html>

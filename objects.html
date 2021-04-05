@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      const users = {
+        Alex: {
+            email: 'alex@alex.com',
+            skills: ['HTML', 'CSS', 'JavaScript'],
+            age: 20,
+            isLoggedIn: false,
+            points: 30
+        },
+        Asab: {
+            email: 'asab@asab.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'Redux', 'MongoDB', 'Express', 'React', 'Node'],
+            age: 25,
+            isLoggedIn: false,
+            points: 50
+        },
+        Brook: {
+            email: 'daniel@daniel.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux'],
+            age: 30,
+            isLoggedIn: true,
+            points: 50
+        },
+        Daniel: {
+            email: 'daniel@alex.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'Python'],
+            age: 20,
+            isLoggedIn: false,
+            points: 40
+        },
+        John: {
+            email: 'john@john.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'React', 'Redux', 'Node.js'],
+            age: 20,
+            isLoggedIn: true,
+            points: 50
+        },
+        Thomas: {
+            email: 'thomas@thomas.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'React'],
+            age: 20,
+            isLoggedIn: false,
+            points: 40
+        },
+        Paul: {
+            email: 'paul@paul.com',
+            skills: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Express', 'React', 'Node'],
+            age: 20,
+            isLoggedIn: false,
+            points: 40
+        }
+
+
+       
+}
+
+
+function getBestStudent(users){
+    const values = Object.values(users);// convert object users to array 
+    let bestStudent;
+    let bestScore=0;
+    for(let i=0;i<values.length;i++){
+
+        if (values[i].skills.length>bestScore){
+            bestStudent=values[i];
+            bestScore=values[i].skills.length;
+        } 
+    }
+    // console.log(bestScore);
+        return bestStudent;
+            
+ }
+
+ // demo 
+
+ console.log(getBestStudent(users));
+
+
+ function maxNumber(arr){
+     let maVariablemax =0;
+     for(let i=0; i<arr.length;i++){
+         if(arr[i]> maVariablemax){
+            maVariablemax=arr[i];
+         }
+     }
+
+     return maVariablemax;
+ }
+
+ const table =[12,35,7,10,75,81,4];
+ let table2=[3,16,8];
+ console.log(maxNumber(table2));
+
+    </script>
+</body>
+</html>

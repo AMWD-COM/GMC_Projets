@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <h1>Go MyCode challenges in 2021</h1>
+        <h2>learning JavaScript Challenge</h2>
+        <ul>
+            <li>HTML Challenge Done</li>
+            <li>CSS Challenge Done</li>
+            <li>javaScript Challenge Coming</li>
+            <li>Git/Github Challenge Coming</li>
+            <li>Reactjs Challenge Coming</li>
+            <li>Back-end with NodeJS and Express Challenge Coming</li>
+            <li>DataBase with MongDB Challenge Coming</li>
+        </ul>
+    </div>
+    <script>
+        var i = 0;
+            function change() {
+            var doc = document.querySelector("h1");
+            var color = ["black", "blue", "brown", "green","pink"];
+            doc.style.color = color[i];
+            i = (i + 1) % color.length;
+            }
+setInterval(change, 1000);
+
+
+
+const e= document.querySelectorAll("li");
+for(let i=0;i<e.length;i++){
+
+    if(e[i].textContent.includes("Done")){
+        e[i].style.color="red";
+    }else {
+            if(e[i].textContent.includes("Coming"))
+            {e[i].style.color="green";}
+            else {
+                if(e[i].textContent.includes("non"))
+            {e[i].style.color="yellow";}
+            }
+            
+           
+        }
+}
+    </script>
+</body>
+</html>

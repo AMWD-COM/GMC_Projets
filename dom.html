@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Document Object Model</title>
+    </head>
+
+    <style>
+      .titre{
+        margin: 30px 30%;
+        margin-left: 439px;
+        color: rgb(180, 61, 13);
+      }
+        .container{
+           width: 90%;
+           margin: 0 auto;
+           display: flex;
+           flex-wrap: wrap;
+           align-content: center;
+        }
+        .number{
+         
+         display: flex;
+         text-align: center;
+         align-items: center;
+         align-content: center;
+         justify-content: center;
+         padding: 2px;
+         height: 90px;
+         width: 90px;
+         margin: 1px 1px ;
+         /* border: 1px solid black  ; */
+        }
+        input{
+          width: 400px;
+          height: 30px;
+        }
+        .enter{
+          margin: 20px;
+          margin-left: 400px;
+        }
+        button{
+          padding: 11px 15px;
+          background-color: rgb(180, 61, 13);
+          border-radius: 5px;
+          border: none;
+        }
+
+    </style>
+    <body>
+      <h1 class="titre" onclick="">Number generator </h1>
+      <div class="enter">
+        
+        <label for="ask">Entrez le numero que vous voulez :  </label><br>
+        <input type="number" id="ask" >
+        <!-- <button onclick="afficher()" >Afficher</button> -->
+      </div>
+     <div class="container">  
+      
+      <!-- <div class="number"><h1>200</h1></div> -->
+     </div>
+
+    
+
+
+
+     <script>
+    // let valeur = prompt("how many boxes you want to creat");
+    // console.log(valeur);
+    let input = document.querySelector('input');
+
+        
+    function test_prime(n)
+          {if (n===1)
+            {return false;}
+            else if(n === 2)
+            {return true;
+            }else
+            {for(var x = 2; x < n; x++)
+              {if(n % x === 0)
+                {return false; }}
+              return true;  
+            }
+          }
+          function cleanContainer(container){
+                while (container.firstChild) {
+                    container.removeChild(container.firstChild);
+                }
+            }
+       
+        function afficher(event){ 
+        console.log(event.keyCode);
+        if(event.keyCode===13){
+        const body = document.body;
+        let input=document.getElementById("ask").value;
+        let container=document.querySelector(".container");
+        cleanContainer(container);
+          
+        ask.className = "";
+        ask.innerHTML = "";
+        let number = parseInt(input) - 1;
+       
+        for (let i = 0; i < input; i++) {
+          number = document.createElement('div')
+            number.className = 'number'
+            number.style.fontSize = '30px'
+            number.style.color = 'white'
+            number.textContent = i
+            if (i%2==0){
+              number.style.backgroundColor="green";
+            }else {
+              number.style.backgroundColor="yellow";
+              number.style.color = 'black'
+            }
+            if(test_prime(i)){
+              number.style.backgroundColor="red";
+            }
+
+            container.appendChild(number)
+        }
+         }
+        }
+
+        
+        document.body.addEventListener('keydown', afficher);
+         
+     </script>
+    </body>
+  </html>
